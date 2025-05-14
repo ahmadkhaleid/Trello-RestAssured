@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="Tests">
+        <classes>
+            <class name="com.trello.badScenarioTests.BoardBadTests">
+                <methods>
+                    <include name="CreateBoardWithMissingName"/>
+                    <include name="CreateBoardWithInvalidToken"/>
+                    <include name="getBoardWithInvalidId"/>
+                </methods>
+            </class>
+            <class name="com.trello.happyScenarioTests.BoardTests">
+                <methods>
+                    <include name="createNewBoard"/>
+                    <include name="getBoard"/>
+                    <include name="deleteBoard"/>
+                </methods>
+            </class>
+            <class name="com.trello.happyScenarioTests.ListTests">
+                <methods>
+                    <include name="createNewList"/>
+                    <include name="getList"/>
+                    <include name="updateList"/>
+                </methods>
+            </class>
+            <class name="com.trello.happyScenarioTests.CardTests">
+                <methods>
+                    <include name="createNewCard"/>
+                    <include name="getCard"/>
+                    <include name="deleteCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
